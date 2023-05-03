@@ -22,12 +22,12 @@ const passwordCompare = async(password, hassedPassword)=>{
 
 
 const tokenValue = async(req, res, next)=>{
-    console.log(req.headers.authorization)
+    // console.log(req.headers.authorization)
     if(req.headers.authorization){
         let tokan =await req.headers.authorization.split(" ")[1]
-        console.log(tokan)
+        // console.log(tokan)
         let data = await jwt.decode(tokan)
-        console.log(data)
+        // console.log(data)
         if(Math.floor(((+new Date())/1000)) < data.exp){
            next()
         }else{

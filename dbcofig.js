@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  `mongodb+srv://ibrahim:Wy1N3c8guBGJee0v@cluster0.vyrjjl0.mongodb.net/CRM?retryWrites=true&w=majority`,
+  `mongodb+srv://ibrahim:3xTxzXTIy1Bk4E7h@cluster0.vyrjjl0.mongodb.net/CRM?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true },
   console.log("mongo is connected")
 );
