@@ -2,8 +2,14 @@
 
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  `mongodb+srv://ibrahim:3xTxzXTIy1Bk4E7h@cluster0.vyrjjl0.mongodb.net/CRM?retryWrites=true&w=majority`,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  console.log("mongo is connected")
-);
+const connect = async()=>{
+ await mongoose.connect(
+    "mongodb+srv://ibrahim:n9WhvbpBw6Gtny3I@cluster0.vyrjjl0.mongodb.net/CRM?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    console.log("mongo is connected")
+  );
+
+}
+
+module.exports = connect
+

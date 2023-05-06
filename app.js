@@ -3,10 +3,12 @@ const Admin = require("./Controler/Admin")
 const pars = require("body-parser")
 const cust = require("./Controler/Customer")
 const App = express()
+const cors = require("cors")
 
 
-require("./dbcofig")
-
+const connect =  require("./dbcofig")
+connect()
+App.use(cors())
 App.use(pars.urlencoded({ extended: true}))
 App.use(pars.json())
 
