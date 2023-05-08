@@ -3,7 +3,7 @@ const UserDB = require("../Schemas/UsersSchemas")
 const { hassedPasword, createToken, passwordCompare, tokenValue, role } = require("../validators/auth")
 const Admin = express()
 
-Admin.get("/get",tokenValue, role, async(req, res, next)=>{
+Admin.get("/get",tokenValue, async(req, res, next)=>{
     const user = await UserDB.find()
     res.status(200).send({
         message:"Token value 1min ",
