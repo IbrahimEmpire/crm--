@@ -13,12 +13,12 @@ Admin.get("/get",tokenValue, role, async(req, res, next)=>{
     })
 })
 
-Admin.post("/signup",async(req, res, next)=>{
+Admin.post("/post",async(req, res, next)=>{
 
     
 try {
    
-    let user =await UserDB.find({email: req.body.email}, {userId: req.body.userId})
+    let user =await UserDB.findOne({email: req.body.email})
    
 if(!user){
     let hashed = await hassedPasword(req.body.password)
@@ -26,12 +26,12 @@ if(!user){
     let user = await UserDB.create(req.body)
   
     res.status(200).send({
-        message: "user signup seccess",
+        message: "user signup success",
 
     })
 }else{
     res.status(401).send({
-        message: "this userID or email id already exist"
+        message: "this emailId already exist"
     })
 }
 } catch (error) {
