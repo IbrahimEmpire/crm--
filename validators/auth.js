@@ -12,7 +12,7 @@ const hassedPasword = async(password)=>{
 
 
 const createToken = async(paylode)=>{
-    let token = await jwt.sign(paylode,sk,{expiresIn: '1m'})
+    let token = await jwt.sign(paylode,sk,{expiresIn: '10m'})
     return token
 }
 

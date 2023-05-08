@@ -6,7 +6,7 @@ const Admin = express()
 Admin.get("/get",tokenValue, role, async(req, res, next)=>{
     const user = await UserDB.find()
     res.status(200).send({
-        message:"Token value 1min ",
+        message:"Token value Only 10 min ",
         success: true,
         data: user
 
