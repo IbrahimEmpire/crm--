@@ -6,7 +6,7 @@ const cust = express()
 cust.get('/get', async(req, res, next)=>{
     const cust = await custDB.find()
     res.status(200).send({
-        message: "cust fetch success",
+        message: "This is Customer Details",
         cust
     })
 })

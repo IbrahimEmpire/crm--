@@ -3,6 +3,7 @@ const validator =  require("validator")
 // const { default: isEmail } = require("validator/lib/isemail")
 
 const customerSchemas = new mongoose.Schema({
+    empId:{type: Number, require:true},
     custId:{type:Number, require:true},
     custName:{type: String, require: true},
     email:{type: String, require: true,

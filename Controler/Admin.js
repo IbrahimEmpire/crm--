@@ -3,7 +3,7 @@ const UserDB = require("../Schemas/UsersSchemas")
 const { hassedPasword, createToken, passwordCompare, tokenValue, role } = require("../validators/auth")
 const Admin = express()
 
-Admin.get("/get",tokenValue, async(req, res, next)=>{
+Admin.get("/get",tokenValue, role, async(req, res, next)=>{
     const user = await UserDB.find()
     res.status(200).send({
         message:"Token value 1min ",
@@ -35,7 +35,7 @@ if(!user){
     })
 }
 } catch (error) {
-    console.log(error)
+  
     res.status(400).send({
         message: "inrernal server error", 
         error,
@@ -130,7 +130,7 @@ Admin.delete("/:id", async(req, res)=>{
         })
       }
     } catch (error) {
-      console.log("The Error is:   ------",error)
+  
       res.status(500).send({
         message:"server error"
       })
